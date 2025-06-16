@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Predictor</title>
+</head>
+<body>
+    <h2>Enter Student Details</h2>
+    <form method="POST">
+        <label>Study Hours:</label><br>
+        <input type="number" name="hours" step="any" required><br><br>
+
+        <label>Attendance (%):</label><br>
+        <input type="number" name="attendance" step="any" required><br><br>
+
+        <label>Assignments Completed:</label><br>
+        <input type="number" name="assignments" step="any" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h3>Prediction Result: <span style="color: {% if result == 'Pass' %}green{% else %}red{% endif %};">{{ result }}</span></h3>
+    {% endif %}
+</body>
+</html>
